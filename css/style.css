@@ -1,125 +1,128 @@
+* {
+	box-sizing: border-box; /* Apply border-box model to all elements */
+  }
+
 html, body {
+	background-color: #F5F5F5;
 	margin: 0px;
 }
 
 header {
+	color: #FFFFFF;
 	height: 100px;
 	width: 100%;
-	display: inline-flex;
+	display: flex;
+	align-items: center;
+	justify-content: space-between; /* Distribute items horizontally */
 }
 
 header .left-pos {
-	width: 600px;
+	width: calc(70% - 50px); /* Adjusted width */
 	text-align: left;
-	background-color: #ACACAC;
+	background-color: #4B0082;
 	border: solid 1px;
-	border-color: #000000;
+	border-color: #ffffff;
 	border-radius: 0px 0px 50px 0px;
 	font-size: 16px;
 	font-style: normal;
+	padding: 10px; /* Added padding for better spacing */
 }
 
 header .left-pos .title {
-	margin: auto;	
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align: center;
+	color: #FFFFFF;
+    text-align: center;
+	text-decoration: none; 
 }
 
 header .right-pos {
-	width: 30%;
-	margin: auto;
-	margin-right: 0px;
-	text-align: right;
-	display: inline-flex;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 10px; /* Added gap between elements */
 }
 
 header .right-pos .create {
-	width: 65%;
-	margin: auto;
-	margin-top: 0px;
-	margin-right: 15px;
-	background-color: #ACACAC;
-	border: solid 1px;
-	border-color: #000000;
-	border-radius: 0px 0px 50px 50px;
-	text-align: center;
-	font-size: 14px;
-	font-style: normal;
+	color: #FFFFFF;
+    text-align: center;
+	text-decoration: none;
+    width: 65%;
+    background-color: #4B0082;
+    border: solid 1px;
+    border-color: #ffffff;
+    border-radius: 0px 0px 50px 50px;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    padding: 10px; /* Added padding for better spacing */
 }
 
 header .right-pos .account {
-	width: 35%;
-	margin-top: 0px;
-	background-color: #55AAFF;
-	border: solid 1px;
-	border-color: #000000;
-	border-radius: 0px 0px 0px 50px;
-	text-align: center;
-	font-size: 16px;
-	font-style: normal;
+    width: 35%;
+    background-color: #FFA500;
+    border: solid 1px;
+    border-color: #ffffff;
+    border-radius: 0px 0px 0px 50px;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    padding: 10px; /* Added padding for better spacing */
 }
 
 header .right-pos .account img {
-	height: 75px;
-	width: 75px;
-	margin: auto;
-	margin-top: 5px;
+    height: 75px;
+    width: 75px;
+    margin-top: 5px;
 }
 
 main {
-	display: grid;
-	height: 77.7vh;
-	text-align: center;
-
-}
+	margin: 0;
+	display: flex;
+	flex-direction: column; /* Changed to column */
+	justify-content: center;
+	align-items: center;
+	height: 72.5vh; /* Adjust the value as needed */
+  }
 
 footer {
-	display: inline-flex;
+	color: #FFFFFF;
+	display: flex; /* Changed from inline-flex to flex */
+	align-items: center; /* Vertically centers the child elements */
+	justify-content: space-between; /* Distributes space between elements */
 	width: 100%;
 	height: 100px;
-	background-color: #ACACAC;
-	border-top: solid 5px;
-	border-color: #000000;
+	background-color: #4B0082;
+	border-top: solid 5px #ffffff; /* Combined border-top and border-color */
+	padding: 0 10px; /* Add some padding on the sides */
 }
+
 
 footer .separator {
 	height: 85%;
-	border: solid 3px;
-	border-color: #000000;
-	margin: 10px;
+	border: solid 3px #ffffff; /* Combined border and border-color */
+	margin: auto 5px; /* Centered vertically and 10px margin on the sides */
 }
+
 
 footer .logo img {
 	width: 75px;
 	height: 75px;
-	margin: auto;
-	margin-top: 10px;
-	margin-left: 10px;
+	margin-top: 5px;
+	margin-left: 5px; /* These margins are fine if you're satisfied with the positioning */
 }
 
-footer .contacts {
-	display: inline-flex;
-	vertical-align: center;
-	width 35%;
+footer .contacts, footer .email {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px; /* Adjust margin to control space between separator and these blocks */
+    margin-right: 5px; /* Same for the right side, assuming symmetry is desired */
 }
 
-footer .contacts img {
-	width: 25px;
-	height: 25px;
-	margin: auto;
-}
 
-footer .email {
-
-}
-
+footer .contacts img,
 footer .email img {
 	width: 25px;
 	height: 25px;
-	margin: auto;
-}
-
-footer .address {
-
+	margin: 0 5px; /* Adjust based on your preference for spacing around images */
 }
