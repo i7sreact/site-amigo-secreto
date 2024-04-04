@@ -9,7 +9,9 @@ main .button {
         background-color: #FFFFFF;    
         border: solid 2px #000000; /* Combined border style and color */   
         border-radius: 150px;    
-        padding: 20px;    
+        text-decoration: none;
+	font-style: normal;
+	padding: 20px;    
         margin: 0 auto 25px;
         display: flex;
         flex-direction: column;

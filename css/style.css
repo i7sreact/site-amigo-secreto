@@ -24,6 +24,7 @@ header .left-pos {
 	border-color: #ffffff;
 	border-radius: 0px 0px 50px 0px;
 	font-size: 16px;
+	font-color: #000000;
 	font-style: normal;
 	padding: 10px; /* Added padding for better spacing */
 }
