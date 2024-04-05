@@ -1,0 +1,45 @@
+CREATE DATABASE SECRETFRIEND
+
+CREATE TABLE Participant (
+	id_participant INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	cpf CHAR(14) NOT NULL,
+	participant_name VARCHAR(100) NOT NULL,
+	id_address INTEGER NOT NULL FOREING KEY,
+	id_group INTEGER NOT NULL FOREING KEY
+);
+
+CREATE TABLE Presents (
+	id_present INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	type VARCHAR(30) NOT NULL,
+	present_name VARCHAR(100) NOT NULL,
+	id_nickname INTEGER NOT NULL,
+	id_participant INTEGER NOT NULL
+);
+
+CREATE TABLE Address (
+	id_address INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	street VARCHAR(100) NOT NULL,
+	home_number INTEGER,
+	cep VARCHAR(9) NOT NULL
+);
+
+CREATE TABLE Message (
+	id_message INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	subject VARCHAR(1000),
+	sender INTEGER NOT NULL,
+	receiver INTEGER NOT NULL,
+	message_date date NOT NULL
+);
+
+CREATE TABLE Nickname (
+	id_nickname INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	id_participant INTEGER NOT NULL,
+	nickname_name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE SecretFriend (
+	id_group INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+	group_name VARCHAR(100) NOT NULL,
+	date_raffle date NOT NULL,
+	date_reveal date NOT NULL
+);
