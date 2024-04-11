@@ -1,45 +1,47 @@
-CREATE DATABASE SECRETFRIEND
+CREATE DATABASE secret_friend;
 
-CREATE TABLE Participant (
-	id_participant INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
+USE secret_friend;
+
+CREATE TABLE Particiapante (
+	id_participante INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	cpf CHAR(14) NOT NULL,
-	participant_name VARCHAR(100) NOT NULL,
-	id_address INTEGER NOT NULL FOREING KEY,
-	id_group INTEGER NOT NULL FOREING KEY
+	nome_participante VARCHAR(100) NOT NULL,
+	id_endereco INTEGER NOT NULL,
+	id_grupo INTEGER NOT NULL
 );
 
-CREATE TABLE Presents (
-	id_present INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-	type VARCHAR(30) NOT NULL,
-	present_name VARCHAR(100) NOT NULL,
-	id_nickname INTEGER NOT NULL,
-	id_participant INTEGER NOT NULL
+CREATE TABLE Presente (
+	id_presente INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	tipo VARCHAR(30) NOT NULL,
+	nome_presente VARCHAR(100) NOT NULL,
+	id_apelido INTEGER NOT NULL,
+	id_participante INTEGER NOT NULL
 );
 
-CREATE TABLE Address (
-	id_address INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-	street VARCHAR(100) NOT NULL,
-	home_number INTEGER,
+CREATE TABLE Endereco (
+	id_endereco INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	rua VARCHAR(100) NOT NULL,
+	numero_casa INTEGER,
 	cep VARCHAR(9) NOT NULL
 );
 
-CREATE TABLE Message (
-	id_message INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-	subject VARCHAR(1000),
-	sender INTEGER NOT NULL,
-	receiver INTEGER NOT NULL,
-	message_date date NOT NULL
+CREATE TABLE Mensagem (
+	id_mensagem INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	conteudo VARCHAR(1000),
+	remetente INTEGER NOT NULL,
+	destinatario INTEGER NOT NULL,
+	data_mensagem date NOT NULL
 );
 
-CREATE TABLE Nickname (
-	id_nickname INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-	id_participant INTEGER NOT NULL,
-	nickname_name VARCHAR(100) NOT NULL
+CREATE TABLE Apelido (
+	id_apelido INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_participante INTEGER NOT NULL,
+	nome_apelido VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE SecretFriend (
-	id_group INTEGER NOT NULL PRIMARY KEY AUTO INCREMENT,
-	group_name VARCHAR(100) NOT NULL,
-	date_raffle date NOT NULL,
-	date_reveal date NOT NULL
+CREATE TABLE AmigoSecreto (
+	id_grupo INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	nome_grupo VARCHAR(100) NOT NULL,
+	data_sorteio date NOT NULL,
+	data_revelacao date NOT NULL
 );
