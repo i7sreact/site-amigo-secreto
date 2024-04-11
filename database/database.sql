@@ -2,7 +2,7 @@ CREATE DATABASE secret_friend;
 
 USE secret_friend;
 
-CREATE TABLE Particiapante (
+CREATE TABLE Participante (
 	id_participante INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	cpf CHAR(14) NOT NULL,
 	nome_participante VARCHAR(100) NOT NULL,
@@ -45,3 +45,26 @@ CREATE TABLE AmigoSecreto (
 	data_sorteio date NOT NULL,
 	data_revelacao date NOT NULL
 );
+
+ALTER TABLE Participante ADD CONSTRAINT fk_participante_endereco
+FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco);
+
+ALTER TABLE Participante ADD CONSTRAINT fk_participante_amigosecreto
+FOREIGN KEY (id_grupo) REFERENCES AmigoSecreto(id_grupo);
+
+ALTER TABLE Presente ADD CONSTRAINT fk_presente_apelido
+FOREIGN KEY (id_apelido) REFERENCES Apelido(id_apelido);
+
+ALTER TABLE Presente ADD CONSTRAINT fk_presente_participante
+FOREIGN KEY (id_participante) REFERENCES Participante(id_participante);
+
+ALTER TABLE Mensagem ADD CONSTRAINT fk_mensagem_participante
+FOREIGN KEY (remetente) REFERENCES Participante(id_participante);
+
+ALTER TABLE Mensagem ADD CONSTRAINT fk_mensagem_apelido
+FOREIGN KEY (destinatario) REFERENCES Apelido(id_apelido);
+
+ALTER TABLE Apelido ADD CONSTRAINT fk_apelido_participante
+FOREIGN KEY (id_participante) REFERENCES Participante(id_participante);
+
+
