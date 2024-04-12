@@ -1,5 +1,5 @@
-# E-commerce HELLPhone
+# Site Amigo Secreto
 
 Esse projeto é para a criação de um website usando JavaScript, CSS e HTML.
-Para um comércio de celulares e acessórios que serão vendidos nele.
+Trabalho complementar das matérias banco de dados e desenvolvimento web - front-end.
 
