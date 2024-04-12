@@ -15,3 +15,5 @@ VALUES ('Apelido');
 
 INSERT INTO AmigoSecreto (nome_grupo, data_sorteio, data_revelacao)
 VALUES ('NomeGrupo', '08092005', '08052004');
+
+SELECT * FROM Participante

@@ -1,3 +1,4 @@
+DROP DATABASE secret_friend;
 CREATE DATABASE secret_friend;
 
 USE secret_friend;
@@ -66,5 +67,3 @@ FOREIGN KEY (destinatario) REFERENCES Apelido(id_apelido);
 
 ALTER TABLE Apelido ADD CONSTRAINT fk_apelido_participante
 FOREIGN KEY (id_participante) REFERENCES Participante(id_participante);
-
-
