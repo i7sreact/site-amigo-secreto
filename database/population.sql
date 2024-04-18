@@ -1,19 +1,17 @@
-INSERT INTO Participante (nome_participante, cpf, id_endereco, id_grupo)
-VALUES ('Nome', 'cpf', 'Cardinal', 'Grupo');
-
-INSERT INTO Presente (tipo, nome_presente)
-VALUES ('Tipo', 'Nome');
-
 INSERT INTO Endereco (rua, numero_casa, cep)
-VALUES ('Rua', 'Numero', 'CEP');
-
-INSERT INTO Mensagem (conteudo)
-VALUES ('Conteudo');
-
-INSERT INTO Apelido (nome_apelido)
-VALUES ('Apelido');
+VALUES ('Rua', 1, 'CEP');
 
 INSERT INTO AmigoSecreto (nome_grupo, data_sorteio, data_revelacao)
-VALUES ('NomeGrupo', '08092005', '08052004');
+VALUES ('NomeGrupo', '2004-05-22', '2005-11-12');
 
-SELECT * FROM Participante
+INSERT INTO Participante (nome_participante, cpf, id_endereco, id_grupo)
+VALUES ('Nome', 'cpf', 1, 1);
+
+INSERT INTO Apelido (id_apelido, nome_apelido)
+VALUES (1, 'Apelido');
+
+INSERT INTO Presente (tipo, nome_presente, id_apelido, id_participante)
+VALUES ('Tipo', 'Nome', 1, 1);
+
+INSERT INTO Mensagem (remetente, destinatario, conteudo, data_mensagem)
+VALUES (1, 1, 'Conteudo', '2011-04-21');
