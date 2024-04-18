@@ -1,4 +1,4 @@
-DROP DATABASE secret_friend;
+/*DROP DATABASE secret_friend;*/
 CREATE DATABASE secret_friend;
 
 USE secret_friend;
@@ -40,7 +40,9 @@ CREATE TABLE Apelido (
 	nome_apelido VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE AmigoSecreto (
+/*Nome da tabela alterada apenas na fase de desenvolvimento, para melhor desempenho e entendimento
+AmigoSecreto->Grupo*/
+CREATE TABLE Grupo (
 	id_grupo INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nome_grupo VARCHAR(100) NOT NULL,
 	data_sorteio date NOT NULL,
@@ -51,7 +53,7 @@ ALTER TABLE Participante ADD CONSTRAINT fk_participante_endereco
 FOREIGN KEY (id_endereco) REFERENCES Endereco(id_endereco);
 
 ALTER TABLE Participante ADD CONSTRAINT fk_participante_amigosecreto
-FOREIGN KEY (id_grupo) REFERENCES AmigoSecreto(id_grupo);
+FOREIGN KEY (id_grupo) REFERENCES Grupo(id_grupo);
 
 ALTER TABLE Presente ADD CONSTRAINT fk_presente_apelido
 FOREIGN KEY (id_apelido) REFERENCES Apelido(id_apelido);
