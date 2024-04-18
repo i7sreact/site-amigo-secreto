@@ -7,7 +7,7 @@ VALUES ('NomeGrupo', '2004-05-22', '2005-11-12');
 INSERT INTO Participante (nome_participante, cpf, id_endereco, id_grupo)
 VALUES ('Nome', 'cpf', 1, 1);
 
-INSERT INTO Apelido (id_apelido, nome_apelido)
+INSERT INTO Apelido (id_participante, nome_apelido)
 VALUES (1, 'Apelido');
 
 INSERT INTO Presente (tipo, nome_presente, id_apelido, id_participante)
